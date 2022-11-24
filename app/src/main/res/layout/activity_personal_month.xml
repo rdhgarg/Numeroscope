@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.PersonalMonthActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consHeader"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/App_color"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:src="@drawable/ic_back_bg"
+            android:layout_marginStart="@dimen/dp_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/personal_day"
+            android:textSize="@dimen/sp_22"
+            android:textColor="@color/white"
+            android:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvDetails"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        app:cardElevation="@dimen/dp_10"
+        app:cardCornerRadius="@dimen/dp_5"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginHorizontal="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_50"
+        app:layout_constraintTop_toBottomOf="@+id/consHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/dp_10">
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Details"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="@dimen/dp_7"
+                android:fontFamily="@font/roboto_medium"
+                android:textFontWeight="300"
+                android:background="@color/App_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+            <TextView
+                android:id="@+id/txtDateOfBirth1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_desired_date"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                android:textFontWeight="300"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/consDateOfBirth"/>
+
+            <ImageView
+                android:layout_width="@dimen/dp_8"
+                android:layout_height="@dimen/dp_8"
+                android:src="@drawable/ic_star"
+                app:layout_constraintTop_toTopOf="@+id/txtDateOfBirth1"
+                app:layout_constraintStart_toEndOf="@+id/txtDateOfBirth1"
+                app:layout_constraintBottom_toTopOf="@+id/txtDateOfBirth1"/>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consDesiredDate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@drawable/outline_gray1_round_corner_5"
+                android:layout_marginHorizontal="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintTop_toBottomOf="@+id/txtDateOfBirth1">
+
+                <TextView
+                    android:id="@+id/txtSelectDesiredDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/select_desired_date"
+                    android:textSize="@dimen/sp_12"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:maxLines="1"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_5"/>
+
+
+                <ImageView
+                    android:id="@+id/imgCalendorDesired"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:src="@drawable/ic_calander"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:padding="@dimen/dp_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/txtDateOfBirth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/date_of_birth"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/black"
+                android:fontFamily="@font/roboto_medium"
+                android:textFontWeight="300"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/txt1"/>
+
+            <ImageView
+                android:layout_width="@dimen/dp_8"
+                android:layout_height="@dimen/dp_8"
+                android:src="@drawable/ic_star"
+                app:layout_constraintTop_toTopOf="@+id/txtDateOfBirth"
+                app:layout_constraintStart_toEndOf="@+id/txtDateOfBirth"
+                app:layout_constraintBottom_toTopOf="@+id/txtDateOfBirth"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consDateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:background="@drawable/outline_gray1_round_corner_5"
+                android:layout_marginHorizontal="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_15"
+                app:layout_constraintTop_toBottomOf="@+id/txtDateOfBirth">
+
+                <TextView
+                    android:id="@+id/txtSelectDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/select_date_of_birth"
+                    android:textSize="@dimen/sp_12"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:maxLines="1"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingEnd="@dimen/dp_5"/>
+
+
+                <ImageView
+                    android:id="@+id/imgCalendor"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:src="@drawable/ic_calander"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:padding="@dimen/dp_4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:cardCornerRadius="@dimen/dp_25"
+        app:cardElevation="@dimen/dp_5"
+        android:layout_marginHorizontal="@dimen/dp_45"
+        android:layout_marginTop="@dimen/dp_45"
+        app:layout_constraintTop_toBottomOf="@+id/cvDetails">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:fontFamily="@font/roboto_bold"
+            android:textFontWeight="300"
+            android:gravity="center"
+            android:background="@color/App_color"/>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

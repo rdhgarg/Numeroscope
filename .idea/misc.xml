@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/drawable/boundary_selected_plan.xml" value="0.1525" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/drawable/boundary_spinner_lang.xml" value="0.1575" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/drawable/boundary_unselected_plan.xml" value="0.1525" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/drawable/cell_shape.xml" value="0.151" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/drawable/gradient_bg_match_maker.xml" value="0.22" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/drawable/outline_gray1_round_corner_5.xml" value="0.1575" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_about_us.xml" value="0.18854166666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_edit_profile.xml" value="0.2" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_generate_report.xml" value="0.18" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_login.xml" value="0.17" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_losho_grid.xml" value="0.22" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_match_maker_input.xml" value="0.25" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_match_maker_result.xml" value="0.16" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_otp.xml" value="0.33" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_personal_month.xml" value="0.2" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_plan_history.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_plan_list.xml" value="0.25" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_plane_detail.xml" value="0.2" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_reports.xml" value="0.18" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_spalash_activty.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/activity_term_and_condition.xml" value="0.18854166666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/choose_photo_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/layout_grid.xml" value="0.18333333333333332" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/layout_spinner_textview.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/list_item_missing_number.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/list_item_personal_year.xml" value="0.19010416666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/list_item_plan_layout.xml" value="0.25" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/list_item_repeat_number.xml" value="0.19010416666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/list_item_single_number.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/month_reponse_dialog_layout.xml" value="0.19947916666666668" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/nav_menu_layout.xml" value="0.25" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/plane_child_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/rv_child_layout_number.xml" value="0.22" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/layout/toolbar_match_maker.xml" value="0.16354166666666667" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/menu/nav_menu.xml" value="0.33" />
+        <entry key="..\:/Numerology/Numerology/app/src/main/res/xml/provider_paths.xml" value="0.153125" />
+        <entry key="..\:/Numeroscop/app/src/main/res/drawable/boundary_unselected_plan.xml" value="0.1275" />
+        <entry key="..\:/Numeroscop/app/src/main/res/drawable/ic_back_bg.xml" value="0.135" />
+        <entry key="..\:/Numeroscop/app/src/main/res/drawable/ic_cross.xml" value="0.1275" />
+        <entry key="..\:/Numeroscop/app/src/main/res/drawable/roundwhite2.xml" value="0.1" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_contact_us.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_generate_report.xml" value="0.1" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_losho_grid.xml" value="0.1" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_main.xml" value="0.2109704641350211" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_match_maker_input.xml" value="0.33" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_my_report.xml" value="0.1" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_otp.xml" value="0.18" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_pdf.xml" value="0.1015625" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_plan_history.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_reports.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_spalash_activty.xml" value="0.19947916666666668" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/activity_term_and_condition.xml" value="0.25" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/dailog_solution.xml" value="0.1721311475409836" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/layout_grid.xml" value="0.19947916666666668" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/layout_pdf_download_popup.xml" value="0.22" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/month_reponse_dialog_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/nav_menu_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Numeroscop/app/src/main/res/layout/rv_child_layout_number.xml" value="0.19947916666666668" />
+        <entry key="..\:/Numeroscop/app/src/main/res/menu/nav_menu.xml" value="0.19947916666666668" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

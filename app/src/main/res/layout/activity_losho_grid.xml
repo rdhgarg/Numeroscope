@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/Drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layouHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:background="@color/App_color"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/imgMenu"
+                    android:layout_width="@dimen/dp_35"
+                    android:layout_height="@dimen/dp_35"
+                    android:layout_margin="@dimen/dp_15"
+                    android:padding="@dimen/dp_6"
+                    android:src="@drawable/ic_menu"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:id="@+id/txtLoshoGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layouHeader">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    tools:context=".Activity.LoshoGridActivity">
+
+                    <LinearLayout
+                        android:id="@+id/layoutName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/textName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="Name"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/layoutName">
+
+                        <TextView
+                            android:id="@+id/txtDateOfBirthTittle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/date_of_birt"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16" />
+
+                        <TextView
+                            android:id="@+id/txtDateOfBirth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/date"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_16" />
+
+
+                        <ImageView
+                            android:id="@+id/imgEdit"
+                            android:layout_width="@dimen/dp_35"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:src="@drawable/ic_edit" />
+
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvDriver"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        app:cardElevation="@dimen/dp_5"
+                        app:layout_constraintTop_toBottomOf="@+id/linearDate">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/consDriver"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/bulish">
+
+                            <TextView
+                                android:id="@+id/txtDriver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/driver"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imgDriver"
+                                android:layout_width="@dimen/dp_55"
+                                android:layout_height="@dimen/dp_55"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:src="@drawable/img_driver"
+                                app:layout_constraintEnd_toEndOf="@id/txtDriver"
+                                app:layout_constraintStart_toStartOf="@id/txtDriver"
+                                app:layout_constraintTop_toBottomOf="@+id/txtDriver" />
+
+                            <ImageView
+                                android:id="@+id/imgCircleDriver"
+                                android:layout_width="@dimen/dp_35"
+                                android:layout_height="@dimen/dp_35"
+                                android:layout_marginBottom="@dimen/dp_6"
+                                android:src="@drawable/img_circle"
+                                app:layout_constraintBottom_toBottomOf="@id/imgDriver"
+                                app:layout_constraintEnd_toEndOf="@id/imgDriver"
+                                app:layout_constraintStart_toStartOf="@id/imgDriver"
+                                app:layout_constraintTop_toTopOf="@id/imgDriver"
+                                app:tint="@color/red" />
+
+                            <TextView
+                                android:id="@+id/txtDriverNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textColor="@color/black"
+                                android:textFontWeight="700"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintBottom_toBottomOf="@+id/imgCircleDriver"
+                                app:layout_constraintEnd_toEndOf="@+id/imgCircleDriver"
+                                app:layout_constraintStart_toStartOf="@+id/imgCircleDriver"
+                                app:layout_constraintTop_toTopOf="@+id/imgCircleDriver" />
+
+                            <TextView
+                                android:id="@+id/txtLuckyNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginBottom="@dimen/dp_7"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/lucky_number"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/imgDriver" />
+
+                            <TextView
+                                android:id="@+id/txtNumberLucky"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintBottom_toBottomOf="@+id/txtLuckyNumber"
+                                app:layout_constraintStart_toEndOf="@+id/txtLuckyNumber"
+                                app:layout_constraintTop_toTopOf="@+id/txtLuckyNumber" />
+
+                            <TextView
+                                android:id="@+id/txtConductor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_25"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/conductor"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintEnd_toStartOf="@+id/txtNameNumber"
+                                app:layout_constraintStart_toEndOf="@+id/txtDriver"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imgConductor"
+                                android:layout_width="@dimen/dp_55"
+                                android:layout_height="@dimen/dp_55"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:src="@drawable/img_driver"
+                                app:layout_constraintEnd_toEndOf="@id/txtConductor"
+                                app:layout_constraintStart_toStartOf="@id/txtConductor"
+                                app:layout_constraintTop_toBottomOf="@+id/txtConductor" />
+
+                            <TextView
+                                android:id="@+id/txtConductorNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/dp_3"
+                                android:elevation="@dimen/dp_1"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textColor="@color/black"
+                                android:textFontWeight="700"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintBottom_toBottomOf="@+id/imgConductor"
+                                app:layout_constraintEnd_toEndOf="@+id/imgConductor"
+                                app:layout_constraintStart_toStartOf="@+id/imgConductor"
+                                app:layout_constraintTop_toTopOf="@+id/imgConductor" />
+
+                            <ImageView
+                                android:id="@+id/imgCircleConductor"
+                                android:layout_width="@dimen/dp_35"
+                                android:layout_height="@dimen/dp_35"
+                                android:layout_marginBottom="@dimen/dp_6"
+                                android:src="@drawable/img_circle"
+                                app:layout_constraintBottom_toBottomOf="@id/imgConductor"
+                                app:layout_constraintEnd_toEndOf="@id/imgConductor"
+                                app:layout_constraintStart_toStartOf="@id/imgConductor"
+                                app:layout_constraintTop_toTopOf="@id/imgConductor" />
+
+                            <TextView
+                                android:id="@+id/txtNameNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginEnd="@dimen/dp_20"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/name_number"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imgNameNumber"
+                                android:layout_width="@dimen/dp_55"
+                                android:layout_height="@dimen/dp_55"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:src="@drawable/img_driver"
+                                app:layout_constraintEnd_toEndOf="@id/txtNameNumber"
+                                app:layout_constraintStart_toStartOf="@id/txtNameNumber"
+                                app:layout_constraintTop_toBottomOf="@+id/txtNameNumber" />
+
+                            <ImageView
+                                android:id="@+id/imgCircleNameNumber"
+                                android:layout_width="@dimen/dp_35"
+                                android:layout_height="@dimen/dp_35"
+                                android:layout_marginBottom="@dimen/dp_6"
+                                android:src="@drawable/img_circle"
+                                app:layout_constraintBottom_toBottomOf="@id/imgNameNumber"
+                                app:layout_constraintEnd_toEndOf="@id/imgNameNumber"
+                                app:layout_constraintStart_toStartOf="@id/imgNameNumber"
+                                app:layout_constraintTop_toTopOf="@id/imgNameNumber"
+                                app:tint="@color/bulish" />
+
+                            <TextView
+                                android:id="@+id/txtNumberName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textColor="@color/black"
+                                android:textFontWeight="700"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintBottom_toBottomOf="@+id/imgCircleNameNumber"
+                                app:layout_constraintEnd_toEndOf="@+id/imgCircleNameNumber"
+                                app:layout_constraintStart_toStartOf="@+id/imgCircleNameNumber"
+                                app:layout_constraintTop_toTopOf="@+id/imgCircleNameNumber" />
+
+                            <TextView
+                                android:id="@+id/txtKuwaNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:layout_marginEnd="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/kuwa_number"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/txtNumberKuwo"
+                                app:layout_constraintTop_toBottomOf="@id/imgCircleNameNumber" />
+
+                            <TextView
+                                android:id="@+id/txtNumberKuwo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintBottom_toBottomOf="@+id/txtKuwaNumber"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/txtKuwaNumber" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_30"
+                        android:layout_marginTop="@dimen/dp_30"
+                        app:layout_constraintTop_toBottomOf="@+id/cvDriver" />
+
+                    <LinearLayout
+                        android:id="@+id/linearPresentNumber"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dp_30"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rvNumber">
+
+                        <TextView
+                            android:id="@+id/txtPresentNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:text="@string/present_number"
+                            android:textColor="@color/App_color"
+                            android:textSize="@dimen/sp_14" />
+
+                        <!--            <ImageView-->
+                        <!--                android:id="@+id/imgRightBackPresent"-->
+                        <!--                android:layout_width="@dimen/dp_15"-->
+                        <!--                android:layout_height="@dimen/dp_15"-->
+                        <!--                android:src="@drawable/ic_right_back"-->
+                        <!--                android:padding="@dimen/dp_2"-->
+                        <!--                android:layout_marginStart="@dimen/dp_2"-->
+                        <!--                android:layout_marginTop="@dimen/dp_4"/>-->
+
+                        <TextView
+                            android:id="@+id/txtNumberPresent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_7"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearMissingNumber"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@id/rvNumber"
+                        app:layout_constraintStart_toStartOf="@+id/rvNumber"
+                        app:layout_constraintTop_toBottomOf="@+id/linearPresentNumber">
+
+                        <TextView
+                            android:id="@+id/txtMissingNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:text="@string/missing_number"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/sp_14" />
+
+                        <TextView
+                            android:id="@+id/txtNumberMissing"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_7"
+                            android:layout_weight="1"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvGenerateReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_45"
+                        android:layout_marginHorizontal="@dimen/dp_45"
+                        android:layout_marginVertical="@dimen/dp_30"
+                        app:cardCornerRadius="@dimen/dp_25"
+                        app:cardElevation="@dimen/dp_5"
+                        app:layout_constraintTop_toBottomOf="@+id/linearMissingNumber">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/App_color"
+                            android:fontFamily="@font/roboto_bold"
+                            android:gravity="center"
+                            android:text="@string/generate_reports"
+                            android:textColor="@color/white"
+                            android:textFontWeight="300"
+                            android:textSize="@dimen/dp_16" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/txtPowerDriverNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/power_of_driver_is_100"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/lato_medium"
+                        android:textAlignment="center"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:layout_marginStart="@dimen/dp_15"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cvGenerateReport"/>
+
+                    <TextView
+                        android:id="@+id/txtPowerConductorNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/power_of_conductor_is_80"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/lato_medium"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginEnd="@dimen/dp_15"
+                        android:layout_marginStart="@dimen/dp_15"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtPowerDriverNumber"/>
+
+                    <TextView
+                        android:id="@+id/txtPowerKuaNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:fontFamily="@font/lato_medium"
+                        android:textAlignment="center"
+                        android:layout_marginTop="@dimen/dp_15"
+                        android:text="Kua Number is: 20"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintTop_toBottomOf="@+id/txtPowerConductorNumber"/>
+
+                    <TextView
+                        android:id="@+id/txtItAllPossible"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:gravity="center"
+                        android:text="@string/it_rarely_possible"
+                        android:textColor="@color/text_Color"
+                        android:textSize="@dimen/sp_12"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/txtPowerKuaNumber"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/NavMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            app:headerLayout="@layout/nav_menu_layout"
+            app:insetForeground="@color/black"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/nav_menu">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginHorizontal="@dimen/dp_45"
+                    android:layout_marginVertical="@dimen/dp_30"
+                    app:cardCornerRadius="@dimen/dp_25"
+                    app:cardElevation="@dimen/dp_5"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/textLogut"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/App_color"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="@string/logout"
+                        android:textColor="@color/white"
+                        android:textFontWeight="300"
+                        android:textSize="@dimen/dp_18" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

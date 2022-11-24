@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/Drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consRoot"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            tools:context=".Activity.MainActivity">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_55"
+                android:background="@color/App_color"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgMenu"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:src="@drawable/ic_menu"
+                    app:tint="@color/white"
+                    android:padding="@dimen/dp_10"
+                    android:visibility="visible"
+                    android:layout_marginStart="@dimen/dp_10"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imgNumerology"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:src="@drawable/img_numerology"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    app:layout_constraintEnd_toStartOf="@+id/txtTittle"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imgInfo"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:src="@drawable/ic_info"
+                    android:padding="@dimen/dp_10"
+                    app:tint="@color/white"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtTittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/numerology"
+                    android:textSize="@dimen/sp_18"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginStart="@dimen/dp_5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0"
+                app:layout_constraintTop_toBottomOf="@+id/consToolbar"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:id="@+id/txtWelcome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/welcome"
+                        android:textSize="@dimen/sp_18"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_medium"
+                        android:layout_marginStart="@dimen/dp_21"
+                        android:layout_marginTop="@dimen/dp_12"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/txtName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/deepak"
+                        android:textSize="@dimen/sp_18"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_medium"
+                        android:layout_marginStart="@dimen/dp_5"
+                        app:layout_constraintStart_toEndOf="@+id/txtWelcome"
+                        app:layout_constraintTop_toTopOf="@+id/txtWelcome"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtWelcome"/>
+
+                    <TextView
+                        android:id="@+id/txtNotEqual"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notequal"
+                        android:textSize="@dimen/sp_18"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_medium"
+                        android:layout_marginStart="@dimen/dp_5"
+                        app:layout_constraintStart_toEndOf="@+id/txtName"
+                        app:layout_constraintTop_toTopOf="@+id/txtName"
+                        app:layout_constraintBottom_toBottomOf="@+id/txtName"/>
+
+                    <TextView
+                        android:id="@+id/txtNumerologyBased"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="wrap_content"
+                        android:text="@string/numerology_result_based"
+                        android:textSize="@dimen/sp_14"
+                        android:textColor="@color/black"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_20"
+                        app:layout_constraintStart_toStartOf="@+id/txtWelcome"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtWelcome"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0"
+                        app:cardElevation="@dimen/dp_10"
+                        app:cardCornerRadius="@dimen/dp_5"
+                        app:cardBackgroundColor="@color/white"
+                        android:layout_marginHorizontal="@dimen/dp_20"
+                        android:layout_marginBottom="@dimen/dp_15"
+                        android:layout_marginTop="@dimen/dp_20"
+                        app:layout_constraintTop_toBottomOf="@+id/txtNumerologyBased">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/txtFullName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/full_name"
+                                android:textSize="@dimen/sp_14"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textFontWeight="300"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_20"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_8"
+                                android:layout_height="@dimen/dp_8"
+                                android:src="@drawable/ic_star"
+                                app:layout_constraintTop_toTopOf="@+id/txtFullName"
+                                app:layout_constraintStart_toEndOf="@+id/txtFullName"
+                                app:layout_constraintBottom_toTopOf="@+id/txtFullName"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/consName"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_45"
+                                android:background="@drawable/outline_gray1_round_corner_5"
+                                android:layout_marginHorizontal="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_10"
+                                app:layout_constraintTop_toBottomOf="@+id/txtFullName">
+
+                                <EditText
+                                    android:id="@+id/edtName"
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="match_parent"
+                                    android:hint="@string/enter_your_name"
+                                    android:textSize="@dimen/sp_12"
+                                    android:textColorHint="@color/black"
+                                    android:textColor="@color/black"
+                                    android:maxLines="1"
+                                    android:inputType="text"
+                                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:background="@android:color/transparent"
+                                    android:paddingStart="@dimen/dp_10"
+                                    android:paddingEnd="@dimen/dp_5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/imgUser"/>
+
+                                <ImageView
+                                    android:id="@+id/imgUser"
+                                    android:layout_width="@dimen/dp_20"
+                                    android:layout_height="@dimen/dp_20"
+                                    android:src="@drawable/ic_user"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <TextView
+                                android:id="@+id/txtMobileNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/mobile_number"
+                                android:textSize="@dimen/sp_14"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textFontWeight="300"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_20"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/consName"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_8"
+                                android:layout_height="@dimen/dp_8"
+                                android:src="@drawable/ic_star"
+                                app:layout_constraintTop_toTopOf="@+id/txtMobileNumber"
+                                app:layout_constraintStart_toEndOf="@+id/txtMobileNumber"
+                                app:layout_constraintBottom_toTopOf="@+id/txtMobileNumber"/>
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/consMobile"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_45"
+                                android:background="@drawable/outline_gray1_round_corner_5"
+                                android:layout_marginHorizontal="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_10"
+                                app:layout_constraintTop_toBottomOf="@+id/txtMobileNumber">
+
+                                <EditText
+                                    android:id="@+id/edtMobileNumber"
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="match_parent"
+                                    android:hint="@string/enter_mobile_number"
+                                    android:textSize="@dimen/sp_12"
+                                    android:textColorHint="@color/black"
+                                    android:textColor="@color/black"
+                                    android:inputType="number"
+                                    android:maxLength="10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:background="@android:color/transparent"
+                                    android:paddingStart="@dimen/dp_10"
+                                    android:paddingEnd="@dimen/dp_5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/imgPhone"/>
+
+                                <ImageView
+                                    android:id="@+id/imgPhone"
+                                    android:layout_width="@dimen/dp_20"
+                                    android:layout_height="@dimen/dp_20"
+                                    android:src="@drawable/ic_phone"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <TextView
+                                android:id="@+id/txtDateOfBirth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/date_of_birth"
+                                android:textSize="@dimen/sp_14"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textFontWeight="300"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_20"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/consMobile"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_8"
+                                android:layout_height="@dimen/dp_8"
+                                android:src="@drawable/ic_star"
+                                app:layout_constraintTop_toTopOf="@+id/txtDateOfBirth"
+                                app:layout_constraintStart_toEndOf="@+id/txtDateOfBirth"
+                                app:layout_constraintBottom_toTopOf="@+id/txtDateOfBirth"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/consDateOfBirth"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_45"
+                                android:background="@drawable/outline_gray1_round_corner_5"
+                                android:layout_marginHorizontal="@dimen/dp_18"
+                                android:layout_marginTop="@dimen/dp_10"
+                                app:layout_constraintTop_toBottomOf="@+id/txtDateOfBirth">
+
+                                <TextView
+                                    android:id="@+id/txtSelectDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:text="@string/select_date_of_birth"
+                                    android:textSize="@dimen/sp_12"
+                                    android:textColorHint="@color/black"
+                                    android:textColor="@color/black"
+                                    android:maxLines="1"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="@dimen/dp_10"
+                                    android:paddingEnd="@dimen/dp_5"/>
+
+
+                                <ImageView
+                                    android:id="@+id/imgCalendor"
+                                    android:layout_width="@dimen/dp_40"
+                                    android:layout_height="@dimen/dp_40"
+                                    android:src="@drawable/ic_calander"
+                                    android:layout_marginEnd="@dimen/dp_5"
+                                    android:padding="@dimen/dp_4"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                            <TextView
+                                android:id="@+id/txtSelectGender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/please_select_gender"
+                                android:textSize="@dimen/sp_14"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/roboto_medium"
+                                android:textFontWeight="300"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_20"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/consDateOfBirth"/>
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_8"
+                                android:layout_height="@dimen/dp_8"
+                                android:src="@drawable/ic_star"
+                                app:layout_constraintTop_toTopOf="@+id/txtSelectGender"
+                                app:layout_constraintStart_toEndOf="@+id/txtSelectGender"
+                                app:layout_constraintBottom_toTopOf="@+id/txtSelectGender"/>
+
+                            <RadioGroup
+                                android:id="@+id/RadioGroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginStart="@dimen/dp_20"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:layout_marginBottom="@dimen/dp_30"
+                                app:layout_constraintStart_toStartOf="@+id/txtSelectGender"
+                                app:layout_constraintEnd_toEndOf="@+id/consDateOfBirth"
+                                app:layout_constraintTop_toBottomOf="@+id/txtSelectGender"
+                                app:layout_constraintBottom_toBottomOf="parent">
+
+                                <RadioButton
+                                    android:id="@+id/btnRadioMale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_30"
+                                    android:text="@string/male"
+                                    android:textSize="@dimen/sp_14"
+                                    android:textColor="@color/black"
+                                    android:buttonTint="@color/App_color"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center_horizontal"
+                                    android:checked="true"/>
+
+                                <RadioButton
+                                    android:id="@+id/btnRadioFemale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/dp_30"
+                                    android:text="@string/female"
+                                    android:textSize="@dimen/sp_14"
+                                    android:textColor="@color/black"
+                                    android:buttonTint="@color/App_color"
+                                    android:layout_weight="1"
+                                    android:layout_gravity="center_horizontal" />
+
+                            </RadioGroup>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_50"
+                        app:cardCornerRadius="@dimen/dp_25"
+                        app:cardElevation="@dimen/dp_5"
+                        android:layout_marginHorizontal="@dimen/dp_45"
+                        android:layout_marginVertical="@dimen/dp_30"
+                        app:layout_constraintTop_toBottomOf="@+id/cvDetails"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="@string/submit"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/dp_18"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textFontWeight="300"
+                            android:gravity="center"
+                            android:background="@color/App_color"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </ScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/NavMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:menu="@menu/nav_menu"
+            app:itemTextColor="@color/black"
+            app:insetForeground="@color/black"
+            app:headerLayout="@layout/nav_menu_layout"
+            android:layout_gravity="start"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    app:cardCornerRadius="@dimen/dp_25"
+                    app:cardElevation="@dimen/dp_5"
+                    android:layout_marginHorizontal="@dimen/dp_45"
+                    android:layout_marginVertical="@dimen/dp_30"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/txtLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/logout"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_18"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textFontWeight="300"
+                        android:gravity="center"
+                        android:background="@color/App_color"/>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.navigation.NavigationView>
+
+   </androidx.drawerlayout.widget.DrawerLayout>
+
+</layout>
+
+

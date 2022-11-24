@@ -1,0 +1,2163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".Activity.GenerateReportActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:background="@color/App_color"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_margin="@dimen/dp_10"
+                    android:src="@drawable/ic_back_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:background="@drawable/boundary_spinner_lang"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <Spinner
+                        android:id="@+id/SpinnerLang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/report"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/textdob">
+
+                    <LinearLayout
+                        android:id="@+id/layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/dp_10"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/dp_20"
+                        app:layout_constraintTop_toBottomOf="@+id/scroll">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_15"
+                            android:layout_marginEnd="@dimen/dp_5"
+                            android:layout_marginBottom="@dimen/dp_5"
+                            android:elevation="@dimen/dp_20"
+                            app:cardBackgroundColor="@color/white"
+                            app:cardCornerRadius="@dimen/dp_7">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dp_5"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/losho_grid"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/txtMale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/losho_grid"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+                                <TextView
+                                    android:id="@+id/textdob"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:paddingBottom="@dimen/dp_10"
+                                    android:text="@string/losho_grid"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/txtMale" />
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:id="@+id/layoutDriver"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_15"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:orientation="vertical"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Driver:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                    <TextView
+                                        android:id="@+id/textDriverValue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="1"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Conductor:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                    <TextView
+                                        android:id="@+id/txtConductor"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="8"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_5">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Kua Number:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                    <TextView
+                                        android:id="@+id/textKuaNumber"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="start"
+                                        android:text="Name Number:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                    <TextView
+                                        android:id="@+id/textNameNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_20"
+                            app:layout_constraintTop_toBottomOf="@+id/layoutDriver" />
+
+                        <TextView
+                            android:id="@+id/textPunchLine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/punch_line"
+                            android:textColor="@color/App_color"
+                            android:textSize="@dimen/sp_18"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rvNumber" />
+
+                        <TextView
+                            android:id="@+id/textPunchLineValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/darkgreen"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                        <!--                </LinearLayout>-->
+
+                        <!--                </androidx.cardview.widget.CardView>-->
+                        <TextView
+                            android:id="@+id/textKarmic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/karmic_number"
+                            android:textColor="@color/App_color"
+                            android:textSize="@dimen/sp_18"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rvNumber" />
+
+                        <TextView
+                            android:id="@+id/textkarmicValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text=""
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+                        <LinearLayout
+                            android:id="@+id/layoutPunch"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dp_10"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:orientation="vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textPunchLineValue">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/plane"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/rvNumber" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_25">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingEnd="@dimen/dp_5"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Golden  Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:id="@+id/textIntellectualValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:layout_gravity="end"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="start">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Silver Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:id="@+id/text_spiritual"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingEnd="@dimen/dp_5">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Thought Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"/>
+
+                                    <TextView
+                                        android:id="@+id/textThoughtValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="start">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Will Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"/>
+
+                                    <TextView
+                                        android:id="@+id/text_will"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingEnd="@dimen/dp_5">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Action Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:id="@+id/text_action"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="start">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Mental Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:id="@+id/text_mental"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_10">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingEnd="@dimen/dp_5">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Emotional Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"/>
+
+                                    <TextView
+                                        android:id="@+id/text_emotional"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="start">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="Practical Plane:"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:id="@+id/text_practical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/dp_10"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:text="10%"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/sp_14"
+                                        android:layout_alignParentEnd="true"/>
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                android:src="@drawable/image_graph" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="EMOTION"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_16"
+                                    android:visibility="invisible" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="THOUGHT"
+                                        android:textColor="@color/colorA62A2A"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="WILL"
+                                        android:textColor="@color/colorA62A2A"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="ACTION"
+                                        android:textColor="@color/colorA62A2A"
+                                        android:textSize="@dimen/sp_14" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="Mental"
+                                        android:textColor="@color/colorA62A2A"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="EMOTIONAL"
+                                        android:textColor="@color/colorA62A2A"
+                                        android:textSize="@dimen/sp_14" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="@dimen/dp_10"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/roboto_medium"
+                                        android:gravity="center"
+                                        android:text="PRACTICAL"
+                                        android:textColor="@color/colorA62A2A"
+                                        android:textSize="@dimen/sp_14" />
+
+                                </LinearLayout>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvPlane"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_20"
+                                    android:layout_weight="1" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/layGoldenPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/golden_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/textIntellectual"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/textIntellectualDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvIntellectual"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layPropertyPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/property_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/SpiritualPlane"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/SpiritualPlaneDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvSpiritual"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layThoughtPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/thought_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/ThoughtPlane"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/ThoughtPlaneDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvThought"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layWillPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/will_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/willPlane"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/willPlaneDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvWill"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layActionPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/action_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/actionPlane"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/actionPlaneDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvAction"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layMentalPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/mental_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/mentalPlane"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/mentalPlaneDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvMental"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layEmotionalPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/emotional_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/emotionalPlane"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/emotionalPlaneDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvEmotional"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layPracticalPlan"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_15"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="@string/practical_plane"
+                                    android:textColor="@color/App_color"
+                                    android:textSize="@dimen/sp_18"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                                <TextView
+                                    android:id="@+id/practicalPlane"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="@dimen/dp_10"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                                <TextView
+                                    android:id="@+id/practicalPlaneDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/dp_12"
+                                    android:layout_marginTop="@dimen/dp_5"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:fontFamily="@font/roboto_medium"
+                                    android:text="Your Driver is 2"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/sp_16"
+                                    app:layout_constraintStart_toStartOf="parent" />
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvPractical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dp_15" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/textDriver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/driver_characterstics"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/layoutPunch" />
+
+                            <TextView
+                                android:id="@+id/textDriverNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Driver is 2"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_16"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textDriver" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvDriver"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_15" />
+
+                            <TextView
+                                android:id="@+id/textDriverDesc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_marginEnd="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Driver is 2"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textDriverNo" />
+
+                            <TextView
+                                android:id="@+id/textConductor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/conductor_characterstics"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textDriverDesc" />
+
+                            <TextView
+                                android:id="@+id/textConductorNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Conductor is 2"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_16"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductor" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvConductor"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_15" />
+
+                            <TextView
+                                android:id="@+id/textConductorDesc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_marginEnd="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Driver is 2"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorNo" />
+
+                            <TextView
+                                android:id="@+id/textRepeatNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/repeat_number"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvRepeatNo"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium" />
+
+                            <TextView
+                                android:id="@+id/textSingleRepeatNo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/single_number"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvSingleRepeatNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/missing_number_of_report"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycleMissingReport"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/name_analysis"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:id="@+id/textAName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textBName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textCName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textDName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textEName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textFName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textGName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=" "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textHName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textNameRemedyDetails"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/namely"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Name Report"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Conductor is 2"
+                                android:textColor="@color/darkgreen"
+                                android:textSize="@dimen/sp_16"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textRepeatNo" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/lucky_days"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:id="@+id/textLuckyDays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/neutral_days"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:id="@+id/textNeutralDays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/avoid_days"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Conductor is 2"
+                                android:textColor="@color/darkgreen"
+                                android:textSize="@dimen/sp_16"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textRepeatNo" />
+
+                            <TextView
+                                android:id="@+id/textAvoidDays"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/lucky_colours"
+                                android:textAlignment="center"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:id="@+id/textLuckyColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/neutral_colours"
+                                android:textAlignment="center"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:id="@+id/textNeutralColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/avoid_colours"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:id="@+id/textAvoidColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=" book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/lucky_profession"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Conductor is 2"
+                                android:textColor="@color/darkgreen"
+                                android:textSize="@dimen/sp_16"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textRepeatNo" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycleLuckyProfession"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_marginEnd="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/neutral_profession"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycleNeutralProfession"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_marginEnd="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/avoid_profession"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Conductor is 2"
+                                android:textColor="@color/darkgreen"
+                                android:textSize="@dimen/sp_16"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textRepeatNo" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycleAvoidProfession"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:layout_marginEnd="@dimen/dp_10"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/personal_year_number"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclePersonalYear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/personal_month_number"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/sp_18"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Your Conductor is 2"
+                                android:textColor="@color/darkgreen"
+                                android:textSize="@dimen/sp_16"
+                                android:visibility="gone"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textRepeatNo" />
+
+                            <TextView
+                                android:id="@+id/textPersonalMonthNumberDetails"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="@string/mobile_report"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc" />
+
+                            <TextView
+                                android:id="@+id/textAMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textBMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textCMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textDMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textEMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textFMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textGMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:id="@+id/textHMobileReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:fontFamily="@font/roboto_medium"
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_16" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="@dimen/dp_10"
+                                android:layout_marginTop="@dimen/dp_15"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="@string/remedies"
+                                android:textColor="@color/App_color"
+                                android:textSize="@dimen/sp_18" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyRemedies"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/dp_5"
+                                android:padding="@dimen/dp_10"
+                                android:background="@drawable/outline_appcolor_round_corner4"/>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_1"
+                                android:layout_marginTop="@dimen/dp_10"
+                                android:layout_marginBottom="@dimen/dp_10"
+                                android:background="@color/App_color"/>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_30"
+                                android:paddingBottom="@dimen/dp_50"
+                                app:layout_constraintTop_toBottomOf="@+id/textConductorDesc">
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutPurchaseButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="@string/to_see_complete_report_upgrade_your_membership"
+                    android:textAlignment="center"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textPunchLine" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvSelectPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:layout_marginHorizontal="@dimen/dp_45"
+                    android:layout_marginVertical="@dimen/dp_30"
+                    app:cardCornerRadius="@dimen/dp_25"
+                    app:cardElevation="@dimen/dp_5">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/App_color"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:text="@string/upgrage_plan"
+                        android:textColor="@color/white"
+                        android:textFontWeight="300"
+                        android:textSize="@dimen/dp_16" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvDropUp"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="right|bottom"
+            app:cardBackgroundColor="@color/App_color"
+            app:cardCornerRadius="@dimen/dp_20"
+            app:cardElevation="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_100"
+            android:layout_marginEnd="@dimen/dp_20"
+            app:layout_constraintTop_toBottomOf="@+id/linearMissingNumber">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/dp_5"
+                android:rotation="90"
+                android:src="@drawable/ic_back_bg"
+                app:tint="@color/white" />
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginVertical="@dimen/dp_0"
+            android:layout_marginHorizontal="@dimen/dp_0"
+            android:layout_gravity="bottom">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvGenerateReport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:layout_marginVertical="@dimen/dp_15"
+                app:cardCornerRadius="@dimen/dp_25"
+                app:cardElevation="@dimen/dp_5"
+                app:layout_constraintTop_toBottomOf="@+id/linearMissingNumber">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/App_color"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/expert_advise"
+                    android:textColor="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="@dimen/dp_16" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>

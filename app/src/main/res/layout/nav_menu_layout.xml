@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/App_color">
+
+                <ImageView
+                    android:id="@+id/imgEdit"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@drawable/ic_edit"
+                    app:tint="@color/white"
+                    android:visibility="invisible"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_25"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/imgUser"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@drawable/ic_user"
+                    app:tint="@color/white"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_25"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/deepak_thakuriya"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginStart="@dimen/dp_10"
+                    app:layout_constraintStart_toEndOf="@+id/imgUser"
+                    app:layout_constraintTop_toTopOf="@+id/imgUser"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgUser"/>
+
+                <ImageView
+                    android:id="@+id/imgPhone"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@drawable/ic_phone"
+                    app:tint="@color/white"
+                    android:layout_marginTop="@dimen/dp_15"
+                    app:layout_constraintStart_toStartOf="@+id/imgUser"
+                    app:layout_constraintTop_toBottomOf="@+id/imgUser"/>
+
+                <TextView
+                    android:id="@+id/txtNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/number_numerical"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginStart="@dimen/dp_10"
+                    app:layout_constraintStart_toEndOf="@+id/imgPhone"
+                    app:layout_constraintTop_toTopOf="@+id/imgPhone"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgPhone"/>
+
+                <ImageView
+                    android:id="@+id/imgEmail"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@drawable/ic_email"
+                    app:tint="@color/white"
+                    android:layout_marginTop="@dimen/dp_15"
+                    app:layout_constraintStart_toStartOf="@+id/imgPhone"
+                    app:layout_constraintTop_toBottomOf="@+id/imgPhone"/>
+
+                <TextView
+                    android:id="@+id/txtEmailId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/abc_email"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    android:fontFamily="@font/roboto_medium"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_25"
+                    app:layout_constraintStart_toEndOf="@+id/imgPhone"
+                    app:layout_constraintTop_toTopOf="@+id/imgEmail"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

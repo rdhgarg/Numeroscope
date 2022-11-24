@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".Activity.LoginActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.48"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:background="@color/App_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/guideline">
+
+            <ImageView
+                android:id="@+id/imgNumerology"
+                android:layout_width="@dimen/dp_170"
+                android:layout_height="@dimen/dp_174"
+                android:src="@drawable/img_numerology"
+                android:layout_marginTop="@dimen/dp_50"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/txtWelcomeBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_back"
+                android:textSize="@dimen/sp_18"
+                android:textColor="@color/white"
+                android:fontFamily="@font/roboto_medium"
+                android:layout_marginStart="@dimen/dp_30"
+                android:layout_marginTop="@dimen/dp_20"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgNumerology"/>
+
+            <TextView
+                android:id="@+id/txtLoginContinue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_to_continue"
+                android:textSize="@dimen/sp_16"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/txtWelcomeBack"
+                app:layout_constraintTop_toBottomOf="@+id/txtWelcomeBack"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            app:cardElevation="@dimen/dp_10"
+            app:cardCornerRadius="@dimen/dp_15"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginTop="-35dp"
+            android:layout_marginBottom="@dimen/dp_15"
+            app:layout_constraintTop_toBottomOf="@+id/guideline"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mobile_number"
+                    android:textSize="@dimen/sp_16"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textFontWeight="300"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_50"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/consMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_45"
+                    android:background="@drawable/outline_appcolor_round_corner4"
+                    android:layout_marginHorizontal="@dimen/dp_18"
+                    android:layout_marginTop="@dimen/dp_15"
+                    app:layout_constraintTop_toBottomOf="@+id/txtMobile">
+
+                    <ImageView
+                        android:id="@+id/imgPhone"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:src="@drawable/ic_phone"
+                        android:layout_marginStart="@dimen/dp_10"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <EditText
+                        android:id="@+id/edtMobile"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="match_parent"
+                        android:hint="@string/enter_mobile_number"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        android:inputType="number"
+                        android:maxLength="20"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/roboto_medium"
+                        android:background="@android:color/transparent"
+                        android:paddingStart="@dimen/dp_10"
+                        app:layout_constraintStart_toEndOf="@+id/imgPhone"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    app:cardCornerRadius="@dimen/dp_25"
+                    app:cardElevation="@dimen/dp_5"
+                    android:layout_marginHorizontal="@dimen/dp_45"
+                    app:layout_constraintTop_toBottomOf="@+id/consMobile"
+                    app:layout_constraintBottom_toTopOf="@+id/LinerRegister">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/login"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_18"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textFontWeight="300"
+                        android:gravity="center"
+                        android:background="@color/App_color"/>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:id="@+id/LinerRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <TextView
+                        android:id="@+id/txtDontHaveAnyAccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dont_have_any_account"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"/>
+
+                    <TextView
+                        android:id="@+id/txtRegister"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/register"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:textColor="@color/App_color"
+                        android:fontFamily="@font/roboto_medium"
+                        android:textSize="@dimen/sp_14"/>
+
+                </LinearLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

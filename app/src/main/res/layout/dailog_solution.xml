@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_10"
+        android:background="@drawable/roundwhite2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_20"
+                android:layout_marginEnd="@dimen/dp_20"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:inputType="textMultiLine"
+                android:text="@string/solution"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_18" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_10"
+                android:layout_marginVertical="@dimen/dp_10">
+
+                <EditText
+                    android:id="@+id/editSolution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine"
+                    android:lines="12"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/dp_8"
+                    android:background="@drawable/boundary_spinner_lang"
+                    android:maxLines="10"
+                    android:textSize="@dimen/sp_14"
+                    android:minLines="12"
+                    android:scrollbars="vertical" />
+
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvGenerateReport"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginHorizontal="@dimen/dp_45"
+                android:layout_marginVertical="@dimen/dp_30"
+                app:cardCornerRadius="@dimen/dp_25"
+                app:cardElevation="@dimen/dp_5"
+                app:layout_constraintTop_toBottomOf="@+id/linearMissingNumber">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/App_color"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    android:textFontWeight="300"
+                    android:textSize="@dimen/dp_16" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtSkip"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="@string/skip"
+                android:textColor="@color/text_Color"
+                android:textFontWeight="300"
+                android:paddingBottom="@dimen/dp_20"
+                android:textSize="@dimen/dp_16" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgCross"
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dp_10"
+            app:srcCompat="@drawable/ic_cross" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_25" />
+
+</LinearLayout>

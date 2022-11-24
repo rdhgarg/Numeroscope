@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".Activity.MatchMakerResultActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layouHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consHeader"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:background="@color/App_color"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:src="@drawable/ic_back_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Compatibility"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="@dimen/dp_10"
+            android:orientation="vertical">
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/dp_10"-->
+<!--                android:orientation="vertical">-->
+
+                <TextView
+                    android:id="@+id/textMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="Male Grid"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvGridMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_30" />
+
+
+                <TextView
+                    android:id="@+id/textFemale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="Female Grid"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvGridFeMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_30" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_5"
+                    android:elevation="@dimen/dp_20"
+                    app:cardBackgroundColor="@color/white">
+
+
+                    <TableLayout
+                        android:id="@+id/layoutTable"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="@dimen/dp_2"
+                        android:stretchColumns="1">
+
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black" />
+
+                        <TableRow>
+
+                            <TextView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_45"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:textColor="@color/colorPink"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textMName"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:singleLine="true"
+                                android:text="Male"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textFName"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:singleLine="true"
+                                android:text="Female"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textFN"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:singleLine="true"
+                                android:text="%"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14" />
+
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_45"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="Driver"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14" />
+                            <!--                    <TextView-->
+                            <!--                        android:layout_width="0dp"-->
+                            <!--                        android:layout_height="@dimen/dp_45"-->
+                            <!--                        android:text="Driver"-->
+                            <!--                        android:textAllCaps="true"-->
+                            <!--                        android:background="@drawable/cell_shape"-->
+                            <!--                        android:textColor="@color/colorPink"-->
+                            <!--                        android:textSize="@dimen/sp_14"-->
+                            <!--                        android:padding="7dip"-->
+                            <!--                        android:layout_weight="1"/>-->
+                            <TextView
+                                android:id="@+id/textMDriver"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="1"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textFDriver"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="2"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textDToDCompa"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text=""
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+                        </TableRow>
+
+
+                        <TableRow>
+
+                            <TextView
+
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_45"
+
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="Conductor"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14" />
+
+
+                            <!--                    <TextView-->
+                            <!--                        android:layout_width="0dp"-->
+                            <!--                        android:layout_height="@dimen/dp_45"-->
+                            <!--                        android:text="Conductor"-->
+                            <!--                        android:textAllCaps="true"-->
+                            <!--                        android:textColor="@color/colorPink"-->
+                            <!--                        android:textSize="@dimen/sp_14"-->
+                            <!--                        android:background="@drawable/cell_shape"-->
+                            <!--                        android:padding="7dip"-->
+                            <!--                        android:layout_weight="1"/>-->
+
+                            <TextView
+                                android:id="@+id/textMConductor"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="2"
+                                android:textAllCaps="true"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textFConductor"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="3"
+                                android:textAllCaps="true"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textCToCCompa"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="1"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                        </TableRow>
+
+                        <TableRow>
+
+
+                            <TextView
+                                android:layout_width="@dimen/dp_100"
+                                android:layout_height="@dimen/dp_45"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:paddingTop="7dip"
+                                android:paddingBottom="7dip"
+                                android:singleLine="true"
+                                android:text="KUA Number"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp_14" />
+                            <!--                    <TextView-->
+                            <!--                        android:layout_width="0dp"-->
+                            <!--                        android:layout_height="@dimen/dp_45"-->
+                            <!--                        android:text="KUA Number"-->
+                            <!--                        android:textAllCaps="true"-->
+                            <!--                        android:textColor="@color/colorPink"-->
+                            <!--                        android:textSize="@dimen/sp_14"-->
+                            <!--                        android:padding="7dip"-->
+                            <!--                        android:background="@drawable/cell_shape"-->
+                            <!--                        android:layout_weight="1"/>-->
+                            <TextView
+                                android:id="@+id/textMKuaNum"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="3"
+                                android:textAllCaps="true"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textFKuaNum"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="4"
+                                android:textAllCaps="true"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                            <TextView
+                                android:id="@+id/textKToKCompa"
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_45"
+                                android:layout_weight="1"
+                                android:background="@drawable/cell_shape"
+                                android:gravity="center"
+                                android:padding="7dip"
+                                android:text="2"
+                                android:textColor="@color/purple_700"
+                                android:textSize="@dimen/sp_14" />
+
+                        </TableRow>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black" />
+
+
+                    </TableLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dip"
+                            android:text="Grid \nCompatibility"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+
+                        <TextView
+                            android:id="@+id/textGridCompa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:padding="3dip"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/purple_700"
+                            android:textSize="@dimen/sp_20" />
+
+
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="3dip"
+                            android:text="Total \nCompatibility"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_14" />
+
+
+                        <TextView
+                            android:id="@+id/textTotalCompa"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:padding="3dip"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/purple_700"
+                            android:textSize="@dimen/sp_20"
+
+                            />
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+<!--        </LinearLayout>-->
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</layout>
