@@ -13,10 +13,11 @@ import retrofit2.Response;
 
 public class GetReportPresenter extends BasePresenter<IGetReportView>{
 
-    public void  GetReportCall (final Activity context, String accessToken, String name, String mobile, String dob, String gender,String report_id){
+    public void  GetReportCall (final Activity context, String accessToken, String name, String mobile, String dob, String gender
+            ,String report_id, String isRefresh){
         getView().enableLoadingBar(context,true,context.getString(R.string.loading));
 
-        TopperApp.getInstance().getApiService().GetReport("Bearer " +accessToken,name,mobile,dob,gender,report_id)
+        TopperApp.getInstance().getApiService().GetReport("Bearer " +accessToken,name,mobile,dob,gender,report_id, isRefresh)
                 .enqueue(new Callback<GetReportResBean>() {
                     @Override
                     public void onResponse(Call<GetReportResBean> call, Response<GetReportResBean> response) {

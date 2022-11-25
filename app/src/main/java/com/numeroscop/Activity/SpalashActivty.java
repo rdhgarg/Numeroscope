@@ -11,7 +11,7 @@ import com.numeroscop.Utils.SharedPreferenceData;
 
 public class SpalashActivty extends AppCompatActivity {
 
-    int delay = 9000;
+    int delay = 6000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -63,7 +63,8 @@ public interface ApiService {
                                     @Field("mobile") String mobile,
                                     @Field("dob") String dob,
                                     @Field("gender") String gender,
-                                    @Field("report_id") String report_id);
+                                    @Field("report_id") String report_id,
+                                    @Field("is_refresh") String isRefresh);
 
 
     @FormUrlEncoded

@@ -148,12 +148,14 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this,R.layout.activity_generate_report);
-        if (getIntent().getSerializableExtra("tabelData")!=null)
-        numberResBean = (GetNumberResBean.Data)getIntent().getSerializableExtra("tabelData");
+        if (getIntent().getSerializableExtra("tabelData")!=null) {
+            numberResBean = (GetNumberResBean.Data) getIntent().getSerializableExtra("tabelData");
+        }
         getReportPresenter = new GetReportPresenter();
         solutionPresenPresenter = new SolutionPresenPresenter();
         getReportPresenter.setView(this);
         solutionPresenPresenter.setView(this);
+        binding.layout.setVisibility(View.GONE);
 
         ActivityCompat.requestPermissions(GenerateReportActivity.this, PERMISSIONS, 112);
         Bundle extras = getIntent().getExtras();
@@ -294,7 +296,7 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
 
         if(NetworkCheck.isConnected(this)) {
             getReportPresenter.GetReportCall(this,ProfileData.getACCESS_TOKEN(),strName,
-                    strphone,strApiBirth,strGender,strReportID);
+                    strphone,strApiBirth,strGender,strReportID, "0");
         }
 
         binding.imgBack.setOnClickListener(new View.OnClickListener() {
@@ -329,6 +331,7 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
     @Override
     public void onGetReportSuccess(GetReportResBean item) {
         if(item.getStatus()){
+            binding.layout.setVisibility(View.VISIBLE);
             strEngpdf = item.getPdfPath();
             strHindipdf = item.getPdfPathHindi();
 
@@ -629,6 +632,7 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
                 binding.SpiritualPlaneDescription.setVisibility(View.GONE);
             }
         }else{
+            binding.layout.setVisibility(View.GONE);
             Toast.makeText(this, item.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
@@ -791,7 +795,7 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
                 if(NetworkCheck.isConnected(this))
                 {
                     getReportPresenter.GetReportCall(this,ProfileData.getACCESS_TOKEN(),strName,
-                            strphone,strApiBirth,strGender,strReportID);
+                            strphone,strApiBirth,strGender,strReportID, "1");
                 }
 
                 String requiredValue = data.getStringExtra("key");
@@ -802,7 +806,6 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
             Toast.makeText(GenerateReportActivity.this, ex.toString(),
                     Toast.LENGTH_SHORT).show();
         }
-
     }
 
     @Override
@@ -979,7 +982,7 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
             isNeedToOpenPDF = true;
             if(NetworkCheck.isConnected(this)) {
                 getReportPresenter.GetReportCall(this,ProfileData.getACCESS_TOKEN(),strName,
-                        strphone,strApiBirth,strGender,strReportID);
+                        strphone,strApiBirth,strGender,strReportID, "1");
             }
         }else{
             Toast.makeText(this, item.getMessage(), Toast.LENGTH_SHORT).show();
