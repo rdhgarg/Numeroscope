@@ -161,11 +161,8 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
         Bundle extras = getIntent().getExtras();
 
 
-
-
         /*binding.cvShowReportHindi.setOnClickListener(this);
         binding.cvShowReportEnglish.setOnClickListener(this);*/
-
 
 
         binding.cvDropUp.setOnClickListener(new View.OnClickListener() {
