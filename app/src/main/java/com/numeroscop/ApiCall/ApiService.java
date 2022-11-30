@@ -12,7 +12,10 @@ import com.numeroscop.ApiCall.Model.PersonalDateResBean;
 import com.numeroscop.ApiCall.Model.PlanListResBean;
 import com.numeroscop.ApiCall.Model.RegisterResBean;
 import com.numeroscop.ApiCall.Model.SaveSolutionResBean;
+import com.numeroscop.ApiCall.Model.YantraBraceletResBean;
 import com.numeroscop.Utils.ApiConstants;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -70,9 +73,11 @@ public interface ApiService {
     @FormUrlEncoded
     @POST(ApiConstants.SAVE_SOLUTION_URL)
     @Headers({"Content-Type: application/x-www-form-urlencoded"})
-    Call<SaveSolutionResBean>SaveSolution(@Header("Authorization") String accessToken,
+    Call<SaveSolutionResBean>SaveSolution(@Field("report_id") String report_id,
                                           @Field("solution") String solution,
-                                          @Field("report_id") String report_id);
+                                          @Field("yantra[]") List<String> yantraIdList,
+                                          @Field("bracelet[]") List<String> braceletIdList,
+                                          @Header("Authorization") String accessToken);
 
 
     @Multipart
@@ -120,6 +125,10 @@ public interface ApiService {
     @POST(ApiConstants.GET_MY_REPORTS)
     @Headers({"Content-Type: application/x-www-form-urlencoded"})
     Call<MyReportResBean>GetMyReports(@Header("Authorization") String accessToken);
+
+    @POST(ApiConstants.GET_YANTRA_BRACELET)
+    @Headers({"Content-Type: application/x-www-form-urlencoded"})
+    Call<YantraBraceletResBean> getYantraBracelet(@Header("Authorization") String accessToken);
 
 
 }

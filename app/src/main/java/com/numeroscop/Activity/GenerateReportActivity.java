@@ -1,20 +1,23 @@
 package com.numeroscop.Activity;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.FileProvider;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import android.app.Activity;
 import android.app.Dialog;
-import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -22,7 +25,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
@@ -61,9 +63,7 @@ import com.numeroscop.ApiCall.Model.GetNumberResBean;
 import com.numeroscop.ApiCall.Model.GetReportResBean;
 import com.numeroscop.ApiCall.Model.SaveSolutionResBean;
 import com.numeroscop.ApiCall.Presenter.GetReportPresenter;
-import com.numeroscop.ApiCall.Presenter.SolutionPresenPresenter;
 import com.numeroscop.ApiCall.View.IGetReportView;
-import com.numeroscop.ApiCall.View.IGetSolutionView;
 import com.numeroscop.Model.NumberModel;
 import com.numeroscop.R;
 
@@ -71,17 +71,15 @@ import com.numeroscop.Utils.NetworkCheck;
 import com.numeroscop.Utils.SharedPreferenceData;
 import com.numeroscop.databinding.ActivityGenerateReportBinding;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class GenerateReportActivity extends BaseActivity implements View.OnClickListener, IGetReportView , IGetSolutionView {
+public class GenerateReportActivity extends BaseActivity implements View.OnClickListener, IGetReportView {
     ActivityGenerateReportBinding binding;
     SharedPreferenceData ProfileData;
     String  strBirth="",strApiBirth="",strName = "",strphone="",strGender = "",strReportID ="";
     GetReportPresenter getReportPresenter;
-    SolutionPresenPresenter solutionPresenPresenter;
     GenerateNumberAdapter numberAdapter;
     LuckyProfessionAdapter luckyProfessionAdapter;
     NeutralProfessionAdapter neutralProfessionAdapter;
@@ -152,9 +150,7 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
             numberResBean = (GetNumberResBean.Data) getIntent().getSerializableExtra("tabelData");
         }
         getReportPresenter = new GetReportPresenter();
-        solutionPresenPresenter = new SolutionPresenPresenter();
         getReportPresenter.setView(this);
-        solutionPresenPresenter.setView(this);
         binding.layout.setVisibility(View.GONE);
 
         ActivityCompat.requestPermissions(GenerateReportActivity.this, PERMISSIONS, 112);
@@ -172,13 +168,19 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
             }
         });
 
-
         binding.cvGenerateReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                solutionPopUp();
-
+                Intent intent = new Intent(GenerateReportActivity.this, YantraBraceletActivity.class);
+                intent.putExtra("reportId", strReportID);
+                if (lng.equalsIgnoreCase("English")) {
+                    intent.putExtra("pdfLink", strEngpdf);
+                }else {
+                    intent.putExtra("pdfLink", strHindipdf);
+                }
+                startActivityForResult(intent, 123);
+                //solutionPopUp();
             }
         });
 
@@ -798,6 +800,12 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
                 String requiredValue = data.getStringExtra("key");
 
 
+            }else if (resultCode == Activity.RESULT_OK && requestCode == 123) {
+                isNeedToOpenPDF = true;
+                if(NetworkCheck.isConnected(GenerateReportActivity.this)) {
+                    getReportPresenter.GetReportCall(GenerateReportActivity.this,ProfileData.getACCESS_TOKEN(),strName,
+                            strphone,strApiBirth,strGender,strReportID, "1");
+                }
             }
         } catch (Exception ex) {
             Toast.makeText(GenerateReportActivity.this, ex.toString(),
@@ -960,7 +968,7 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
                 }else {
                     if(NetworkCheck.isConnected(getContext()))
                     {
-                        solutionPresenPresenter.SaveSolutionCall(GenerateReportActivity.this,ProfileData.getACCESS_TOKEN(),Strsolution, strReportID);
+                        //solutionPresenPresenter.SaveSolutionCall(GenerateReportActivity.this,ProfileData.getACCESS_TOKEN(),Strsolution, strReportID);
                     }
 
                 }
@@ -969,20 +977,5 @@ public class GenerateReportActivity extends BaseActivity implements View.OnClick
         });
 
         dialog.show();
-    }
-
-
-    @Override
-    public void onGetSolutionSuccess(SaveSolutionResBean item) {
-        if(item.getStatus()){
-            //Toast.makeText(this, item.getMessage(), Toast.LENGTH_SHORT).show();
-            isNeedToOpenPDF = true;
-            if(NetworkCheck.isConnected(this)) {
-                getReportPresenter.GetReportCall(this,ProfileData.getACCESS_TOKEN(),strName,
-                        strphone,strApiBirth,strGender,strReportID, "1");
-            }
-        }else{
-            Toast.makeText(this, item.getMessage(), Toast.LENGTH_SHORT).show();
-        }
     }
 }

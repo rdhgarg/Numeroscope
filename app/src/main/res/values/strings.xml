@@ -178,6 +178,11 @@ F, P = 8\n\n
     <string name="skip"><![CDATA[Skip & Share PDF]]></string>
     <string name="grid_plans">Grid Planes</string>
     <string name="get_pdf">Get PDF</string>
+    <string name="available_yatras">Available Yantras</string>
+    <string name="available_bracelet">Available Bracelet</string>
+    <string name="no_product_found">No product found</string>
+    <string name="solutions">Solutions</string>
+    <string name="type_solution_here">Type solutions here</string>
 
 
 </resources>
